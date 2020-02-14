@@ -1,0 +1,127 @@
+{% extends 'wsnanalysis/base.html' %}
+{% load staticfiles %}
+<!-- {% block dashboard %}active{% endblock %} -->
+{% block head %}
+<!-- ico font -->
+<link rel="stylesheet" type="text/css" href="{% static 'assets/icon/icofont/css/icofont.css' %}">
+<!-- morris chart -->
+<link rel="stylesheet" type="text/css" href="{% static 'assets/css/morris.js/css/morris.css' %}">
+<!-- Style.css -->
+<link rel="stylesheet" type="text/css" href="{% static 'assets/css/style.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'assets/css/jquery.mCustomScrollbar.css' %}">
+{% endblock head %}
+{% block active_c %}active{% endblock active_c %}
+{% block content %}
+<div class="page-body">
+    <div class="row">
+        <!-- SITE VISIT CHART start -->
+        <div class="col-md-12 col-lg-6">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Live people count</h5>
+                    <span>People count captured from Sensor</span>
+                </div>
+                <div class="card-block">
+                    <!-- <div id="morris-site-visit"></div> -->
+                    <div>
+                        <iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/764970/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12 col-lg-6">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Live ammonia level</h5>
+                    <span>Ammonia level captured through sensor</span>
+                </div>
+                <div class="card-block">
+                    <!-- <div id="morris-site-visit"></div> -->
+                    <div>
+                        <iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/764970/charts/2?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- SITE VISIT CHART Ends -->
+        <!-- Area Chart start -->
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Daily Ammonia Level</h5>
+                    <span>Ammonia level of 3 toilets</span>
+                </div>
+                <div class="card-block">
+                    <div id="area-example"></div>
+                </div>
+            </div>
+        </div>
+        <!-- Area Chart Ends -->
+        
+        
+        <!-- LINE CHART start -->
+        <div class="col-md-12 col-lg-6">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Toilet usage</h5>
+                    <span>Seven year comparison for usage of two toilets(in 1000)</span>
+                </div>
+                <div class="card-block">
+                    <div id="line-example"></div>
+                </div>
+            </div>
+        </div>
+        <!-- LINE CHART Ends -->
+        <!-- Donut chart start -->
+        <div class="col-md-12 col-lg-6">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Monthly Usage</h5>
+                    <span>Monthly usage of toilet alongwith time intervals</span>
+                </div>
+                <div class="card-block">
+                    <div id="donut-example"></div>
+                </div>
+            </div>
+        </div>
+        <!-- Donut chart Ends -->
+        <!-- EXTRA AREA CHART start -->
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Annual Ammonia Usage</h5>
+                    <span>Ammonia levels tracked annualy</span>
+                </div>
+                <div class="card-block">
+                    <div id="morris-extra-area"></div>
+                </div>
+            </div>
+        </div>
+        <!-- EXTRA AREA CHART Ends -->
+        <!-- Bar Chart start -->
+        <div class="col-md-12 col-lg-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Weekly Usage</h5>
+                    <span>Usage of toilet as per weekdays</span>
+                </div>
+                <div class="card-block">
+                    <div id="morris-bar-chart"></div>
+                </div>
+            </div>
+        </div>
+        <!-- Bar Chart Ends -->
+    </div>
+</div>
+{% endblock content%}
+{% block js %}
+<!-- Morris Chart js -->
+<script src="{% static 'assets/js/raphael/raphael.min.js' %}"></script>
+<script src="{% static 'assets/js/morris.js/morris.js' %}"></script>
+<!-- Custom js -->
+<script src="{% static 'assets/js/morris-custom-chart.js' %}"></script>
+<script src="{% static 'assets/js/pcoded.min.js' %}"></script>
+<script src="{% static 'assets/js/vertical-layout.min.js' %}"></script>
+<script src="{% static 'assets/js/jquery.mCustomScrollbar.concat.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'assets/js/script.js' %}"></script>
+{% endblock js %}
